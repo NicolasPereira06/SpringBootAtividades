@@ -3,6 +3,7 @@ package br.fatec.projeto_prova_spring.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import jakarta.persistence.Column;
@@ -31,6 +32,7 @@ public class Usuario {
     private String nome;
     
     @Column(name = "usr_senha")
+    @JsonIgnore
     private String senha;
 
     @OneToMany(mappedBy = "usuario")
